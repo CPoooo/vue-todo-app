@@ -1,7 +1,17 @@
 <script setup>
+import Navbar from './components/Navbar.vue';
+import EnterItems from './components/EnterItems.vue'
 
 </script>
 
 <template>
-  <h1 class="text-blue-500 text-9xl font-sans">Hello World</h1>
+  <Navbar />
+  <EnterItems />
 </template>
+
+<style>
+body {
+  background-color: #f3f4f6;
+  margin: 0;
+}
+</style>
