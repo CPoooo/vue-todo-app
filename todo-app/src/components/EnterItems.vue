@@ -24,9 +24,14 @@ const checkOffItem = (id) => {
   const todo = todos.value.find(todo => todo.id === id);
   if (todo) {
     todo.completed = !todo.completed;
-    console.log(`checking off item with id ${id}`)
+    console.log(`toggle checkoff for item ${id}`)
   }
 }
+
+const deleteItem = (id) => {
+  todos.value = todos.value.filter(todo => todo.id !== id);
+  console.log(`Deleted item with id ${id}`);
+};
 </script>
 
 <template>
@@ -55,6 +60,7 @@ const checkOffItem = (id) => {
       :completed="todo.completed"
       :id="todo.id"
       @checkOff="checkOffItem"
+      @deleteItem="deleteItem"
     />
   </div>
 </template>
